@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>少女風 DIY 蛋糕網頁原型</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+    body {
+      background-color: #fff4f6;
+      font-family: "PingFang TC", "Microsoft JhengHei", sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      color: #6b4c4c;
+    }
+    header {
+      margin: 15px 0 10px;
+      text-align: center;
+    }
+    h1 {
+      font-size: 1.4rem;
+      color: #d87093;
+    }
+    p.subtitle {
+      font-size: 0.85rem;
+      color: #a07080;
+    }
+    /* 遊戲畫布容器 */
+    #game-container {
+      position: relative;
+      width: 350px;
+      height: 380px;
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(216, 112, 147, 0.15);
+      border: 4px solid #ffdeeb;
+      overflow: hidden;
+    }
+    canvas {
+      width: 100%;
+      height: 100%;
+      touch-action: none; /* 阻止手機預設滾動 */
+    }
+    /* 控制工具列 */
+    .controls-panel {
+      width: 350px;
+      margin-top: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .palette-title {
+      font-size: 0.9rem;
+      font-weight: bold;
+      color: #b55273;
+    }
+    .items-selector {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding: 5px 2px;
+    }
+    .item-btn {
+      background: #fff;
+      border: 2px solid #ffd1dc;
+      border-radius: 12px;
+      padding: 8px 12px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    .item-btn:active {
+      transform: scale(0.95);
+      background: #ffe6ed;
+    }
+    .action-buttons {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      margin-top: 5px;
+    }
+    .btn {
+      flex: 1;
+      padding: 10px 0;
+      border: none;
+      border-radius: 10px;
+      background-color: #ff94b9;
+      color: white;
+      font-size: 0.9rem;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0
